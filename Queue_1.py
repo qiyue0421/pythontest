@@ -7,6 +7,7 @@ class Task:
     def __init__(self, time):
         # 时间戳，表示任务被创建并放置到打印机队列中的时间
         self.timestamp = time
+        # 模拟任务页面，是个1-20之间的随机数
         self.pages = random.randrange(1, 21)
 
     def getStamp(self):
