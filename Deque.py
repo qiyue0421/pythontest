@@ -37,5 +37,7 @@ def huiwencheck(string):
     return Equal
 
 
+# ...
 print(huiwencheck('maddam'))
 print(huiwencheck('fgafgg'))
+print(huiwencheck('huuhhuuh'))
