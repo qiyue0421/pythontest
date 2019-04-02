@@ -86,36 +86,18 @@ class OrderedList:
         current = self.head
         previous = None
         count = 0
-        """if pos is None:
-            while current.getNext() is not None:
-                previous = current
-                current = current.getNext()
-            if previous is None:
-                self.head = None
-                return current.getData()
+        found = False
+        if not isinstance(pos, int):
+            pos = self.size() - 1
+        while not found:
+            if count == pos:
+                found = True
             else:
-                previous.setNext(None)
-                return current.getData()
-        else:
-            while count != pos and current.getNext() is not None:
                 previous = current
                 current = current.getNext()
                 count += 1
-            if previous is None:
-                self.head = None
-            else:
-                previous.setNext(current.getNext)
-            return current.getData()"""
-        ps = False
-        while current is not None and not ps:
-            previous = current
-            current = current.getNext()
-            if pos is not None and count != pos:
-                count += 1
-                if count == pos:
-                    ps = True
         if previous is None:
-            self.head = None
+            self.head = current.getNext()
         else:
             previous.setNext(current.getNext())
         return current.getData()
@@ -140,9 +122,4 @@ order.add(45)
 order.add(16)
 print(order.size())
 print(order.index(16))
-print(order.pop())
-
-#print(order.pop())
-#print(order.size())
-print(order.pop(1))
-# print(order.pop())
+print(order.pop(3))
