@@ -87,6 +87,7 @@ class OrderedList:
         previous = None
         count = 0
         found = False
+        # 判断参数是否为整型
         if not isinstance(pos, int):
             pos = self.size() - 1
         while not found:
