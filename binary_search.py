@@ -16,18 +16,21 @@ def binary_search(alist, item):
 
 # 二分法查找递归版本
 def binary_recursion(alist, item):
+    # 设置第一个退出条件
     if len(alist) == 0:
         return False
     else:
+        # 中间项
         midpoint = len(alist)//2
+        # 设置第二个退出条件
         if alist[midpoint] == item:
             return True
         else:
             if item < alist[midpoint]:
-                # 使用切片创建左半部分
+                # 使用切片创建左半部分，再次调用递归
                 return binary_recursion(alist[:midpoint], item)
             else:
-                # 使用切片创建右半部分
+                # 使用切片创建右半部分，再次调用递归
                 return binary_recursion(alist[midpoint+1:], item)
 
 
