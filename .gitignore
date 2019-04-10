@@ -4,7 +4,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.idea/
+*.py[cop]
 # C extensions
 *.so
 
@@ -105,5 +106,3 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-.idea/
-*.py[cop]
