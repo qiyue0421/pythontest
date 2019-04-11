@@ -7,7 +7,7 @@ def insertionSort(alist):
         pos = index
         # 子列表的项大于比较项
         while pos > 0 and alist[pos-1] > currentvalue:
-            # 向右移位子列表
+            # 将子列表中较大的项向右移动
             alist[pos] = alist[pos-1]
             pos -= 1
         # 将比较项插入到正确位置
