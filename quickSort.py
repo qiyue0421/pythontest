@@ -3,7 +3,7 @@
 
 # 找寻分隔点函数
 def partition(alist, first, last):
-    # 枢轴值
+    # 枢轴值，这里取第一个元素
     pivotvalue = alist[first]
 
     # 左右标记位
@@ -14,10 +14,12 @@ def partition(alist, first, last):
     done = False
 
     while not done:
+        # 在左标记小于右标记情况下，检查左边标记位元素是否小于枢轴值
         while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
             # 左标记递增
             leftmark += 1
 
+        # 在左标记小于右标记情况下，检查右边标记位元素是否大于枢轴值
         while leftmark <= rightmark and alist[rightmark] >= pivotvalue:
             # 右标记递减
             rightmark -= 1
@@ -25,10 +27,11 @@ def partition(alist, first, last):
         # 如果右标记小于左标记，说明分隔点已经找到,此时分隔点就是右标记
         if rightmark < leftmark:
             done = True
+        # 否则，交换两个错误项
         else:
             alist[leftmark], alist[rightmark] = alist[rightmark], alist[leftmark]
 
-    # 找到了分隔点，将枢轴值放入分隔点内
+    # 找到了分隔点，使用交换操作将枢轴值放入分隔点内
     alist[rightmark], alist[first] = alist[first], alist[rightmark]
     # 需要返回分隔点以执行后面的递归操作
     return rightmark
