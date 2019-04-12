@@ -1,4 +1,4 @@
-# 插入排序的实现，关键在于将比较项插入到正确位置
+# 插入排序的实现，关键在于首先将比较项保存，然后将比较项插入到正确位置
 def insertionSort(alist):
     # 需要遍历n-1次
     for index in range(1, len(alist)):
