@@ -1,3 +1,4 @@
+# 选择排序的关键在于——每次遍历列表进行排序时，找出最大值，遍历完成后执行交换操作，将最大值放到正确的位置
 def selectSort(alist):
     # 遍历n-1次排序
     for fillsolt in range(len(alist)-1, 0, -1):
